@@ -1,14 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import { Entypo } from '@expo/vector-icons';
-import {fraseAleatoria,frase} from '../../utils/index'
-import {useState} from 'react'
-import FraseModal from "../../utils/FraseModal";
+import { View, Text, StyleSheet,Image } from "react-native";
+import {frase} from '../../utils/index';
+import {useState} from 'react';
+import Star from '../../components/Star';
+
+
+
 
 interface Props{
   text:string
 }
-export function Stars({text = frase}:Props) {
+export  default function StarsScreen() {
   const [start,setStart] = useState(false)
 
   
@@ -20,20 +22,23 @@ export function Stars({text = frase}:Props) {
           style={{ flex: 1, position: "absolute" }}
         />
    
-        <TouchableOpacity style={styles.actionButton} onPress={()=>setStart((prev)=>!prev) }>
-          <View style={styles.areaButton}>
-          <Entypo name="star" size={24} color="white" />
-          </View>
-          
-        </TouchableOpacity>
-      </View>
-      <View style={styles.modalScreen}>
-      {start && <FraseModal>{text}</FraseModal>}
+   
+   <View>
+       <Star text={frase}/>
+   </View>
+
+
+   
+
+
+       
         
       </View>
     </>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -67,9 +72,14 @@ const styles = StyleSheet.create({
   },
 
   modalScreen:{
-    marginTop:150,
+  
     alignSelf:"center",
     justifyContent:"center",
     
+  },
+
+  positionStar1: {
+    paddingLeft:60,
+    paddingVertical:-10
   }
 });

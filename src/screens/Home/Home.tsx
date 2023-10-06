@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
 
 export default function Button(props) {
@@ -8,8 +7,9 @@ export default function Button(props) {
   const { navigate } = useNavigation();
 
   const onPresss = () => {
-    navigate("stars");
+    navigate("starsScreen");
   };
+  
   return (
     <>
       <View style={styles.container}>

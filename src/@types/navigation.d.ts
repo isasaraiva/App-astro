@@ -5,7 +5,7 @@ export declare global {
             home: undefined,
             frase1: undefined,
             frase2: undefined,
-            stars: undefined,
+            starsScreen: undefined,
         }
     }
 }
