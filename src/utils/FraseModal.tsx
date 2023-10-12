@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   },
 
   modal:{
+    
     justifyContent:"center",
     alignItems: "center",
     alignContent:"center",

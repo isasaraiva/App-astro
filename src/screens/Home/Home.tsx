@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 21,
     letterSpacing: 0.25,
-    color: "rgb(60, 100, 100)",
+    color: "rgb(180, 150, 40)",
     paddingBottom:40,
    
     
@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
   juText: {
     fontSize: 18,
     lineHeight: 21,
-    letterSpacing: 0.5,
-    color: "rgb(50, 100, 100)",
+    letterSpacing: 0.7,
+    color: "rgba(150, 190, 220, 0.4)",
     
     
   },
@@ -113,8 +113,8 @@ const styles = StyleSheet.create({
   divball: {
     paddingTop: 60,
     borderRadius: 9999,
-    backgroundColor: "rgba(10, 100, 100, 0.2)",
-    height: 250,
+    backgroundColor: "rgba(10, 100, 100, 0.15)",
+    height: 260,
     zIndex: -1,
     
     
