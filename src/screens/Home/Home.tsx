@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+
 export default function Button(props) {
   const { onPress, title = "Quero saber!" } = props;
   const { navigate } = useNavigation();
@@ -9,12 +10,15 @@ export default function Button(props) {
   const onPresss = () => {
     navigate("starsScreen");
   };
+
+
+  
   
   return (
     <>
       <View style={styles.container}>
         <Image
-          source={require("../../../assets/background.png")}
+          source={require("./background.png")}
           style={{ flex: 1, position: "absolute", zIndex: -200 }}
         />
 
@@ -37,6 +41,7 @@ export default function Button(props) {
           </TouchableOpacity>
         </View>
       </View>
+     
     </>
   );
 }

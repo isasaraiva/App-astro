@@ -1,21 +1,20 @@
-import React from "react";
-import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import React, { ReactNode, useContext } from "react";
+import { View, StyleSheet, TouchableOpacity, Image, Alert } from "react-native";
 import { Entypo } from '@expo/vector-icons';
-import { frase } from "../utils";
 import {useState} from 'react';
-import FraseModal from "../utils/FraseModal";
+import AppContext from "../context";
+
 
 interface Props{
-  
   text?:string
 }
 export default function Stars({text}:Props) {
   const [start,setStart] = useState(false)
-
+  const { clicked, setClicked } = useContext(AppContext);
   
   return (
     <>
-      <View >
+      <View style={styles.areaStar}>
         <View style={styles.bg}>
         <Image
           source={require("../../../my-app/assets/background.png")}
@@ -23,18 +22,22 @@ export default function Stars({text}:Props) {
         />
         </View>
    
-        <TouchableOpacity style={styles.actionButton} onPress={()=>setStart((prev)=>!prev) }>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={()=> {
+            setStart((prev)=>!prev);
+            Alert.alert(!clicked ? text : "Hoje era isso que as estrelas tinham pra ti contar, amanhã tem mais!");
+            setClicked(true);
+          }
+        }>
           <View style={styles.areaButton}>
-          <Entypo name="star" size={24} color="white" />
+            <Entypo name="star" size={24} color="white" />
           </View>
           
         </TouchableOpacity>
       </View>
 
-      <View style={styles.modalScreen}>
-      {start && <FraseModal>{text}</FraseModal>}
-        
-      </View>
+     
 
 
         
@@ -52,6 +55,10 @@ const styles = StyleSheet.create({
     paddingEnd: 14,
     paddingStart: 14,
     flex: 1,
+  },
+  areaStar: {
+    flex:1,
+    display:'flex',
   },
   actionButton: {
     alignItems: "center",
@@ -78,10 +85,11 @@ const styles = StyleSheet.create({
   modalScreen:{
     position: 'relative',
     paddingTop:30,
-    marginTop:10,
+    marginTop:80,
     alignSelf:"center",    
     justifyContent:"center",
     flex:1,
+    
     
   },
   bg: {

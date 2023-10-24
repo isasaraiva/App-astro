@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Frase1 from "../screens/Frase1/Index";
 import Button from "../screens/Home/Home";
+
 import StarsScreen from "../screens/Stars/StarsScreen";
 
 export default function Route() {

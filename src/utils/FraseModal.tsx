@@ -33,6 +33,6 @@ const styles = StyleSheet.create({
     width:300,
     borderRadius:20,
     backgroundColor: "rgba(0, 100, 100, 0.4)",
-
+    
   }
 })
