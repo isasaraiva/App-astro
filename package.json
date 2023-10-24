@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "@mdi/js": "^7.3.67",
+    "@mdi/react": "^1.6.1",
+    "@mui/icons-material": "^5.14.15",
     "@react-navigation/native": "^6.1.8",
     "@react-navigation/native-stack": "^6.9.14",
     "@types/react": "~18.2.14",
@@ -33,4 +36,6 @@
     "@types/react-native-vector-icons": "^6.4.16"
   },
   "private": true
+
+  
 }

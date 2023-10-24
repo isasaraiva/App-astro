@@ -5,12 +5,15 @@ import {useState} from 'react';
 import AppContext from "../context";
 
 
+
 interface Props{
+  
   text?:string
 }
 export default function Stars({text}:Props) {
   const [start,setStart] = useState(false)
   const { clicked, setClicked } = useContext(AppContext);
+ 
   
   return (
     <>
@@ -31,7 +34,7 @@ export default function Stars({text}:Props) {
           }
         }>
           <View style={styles.areaButton}>
-            <Entypo name="star" size={24} color="#a4e8f9" />
+          <Entypo name="star" size={18} color="white" />
           </View>
           
         </TouchableOpacity>

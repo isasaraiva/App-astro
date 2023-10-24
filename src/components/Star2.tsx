@@ -1,7 +1,9 @@
-import React from "react";
+import React, { ReactNode, useContext } from "react";
 import { View, StyleSheet, TouchableOpacity, Image, Alert } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import {useState} from 'react';
+import AppContext from "../context";
+
 
 
 interface Props{
@@ -10,7 +12,8 @@ interface Props{
 }
 export default function Stars({text}:Props) {
   const [start,setStart] = useState(false)
-
+  const { clicked, setClicked } = useContext(AppContext);
+ 
   
   return (
     <>
@@ -26,11 +29,12 @@ export default function Stars({text}:Props) {
           style={styles.actionButton}
           onPress={()=> {
             setStart((prev)=>!prev);
-            Alert.alert(text)
+            Alert.alert(!clicked ? text : "Hoje era isso que as estrelas tinham pra ti contar, amanhã tem mais!");
+            setClicked(true);
           }
         }>
           <View style={styles.areaButton}>
-          <Ionicons name="star-half-outline" size={24} color="white" />
+          <Entypo name="star-outlined" size={20} color="#a4e8f9" />
           </View>
           
         </TouchableOpacity>

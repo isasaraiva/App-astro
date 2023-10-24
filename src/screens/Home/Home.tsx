@@ -1,14 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Entypo } from '@expo/vector-icons';
 
 
 export default function Button(props) {
   const { onPress, title = "Quero saber!" } = props;
   const { navigate } = useNavigation();
 
-  const onPresss = () => {
+  const onPressStar = () => {
     navigate("starsScreen");
+  };
+
+  const onPressJu = () => {
+    Linking.openURL('https://www.instagram.com/asestrelasmedisseram/');
   };
 
 
@@ -22,7 +27,8 @@ export default function Button(props) {
           style={{ flex: 1, position: "absolute", zIndex: -200 }}
         />
 
-        <View style={styles.divball}>
+        <View style={styles.container0}>
+        <Entypo name="star-outlined" size={40} color="#a4e8f9" />
           <View style={styles.divText}>
             <Text style={styles.text}> Minha Estrela</Text>
           </View>
@@ -32,11 +38,11 @@ export default function Button(props) {
               o que as estrelas tem para te contar hoje?
             </Text>
           </View>
-          <TouchableOpacity style={styles.button} onPress={onPresss}>
+          <TouchableOpacity style={styles.button} onPress={onPressStar}>
             <Text style={styles.textButton}>{title}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.subcontainer}>
+          <TouchableOpacity style={styles.subcontainer} onPress={onPressJu} >
             <Text style={styles.juText}> Juliana Formiga</Text>
           </TouchableOpacity>
         </View>
@@ -49,6 +55,10 @@ export default function Button(props) {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 200,
+    alignItems:"center",
+    flex: 1,
+  },
+  container0: {
     alignItems:"center",
     flex: 1,
   },
@@ -79,11 +89,11 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   text: {
-    fontSize: 22,
-    lineHeight: 21,
+    fontSize: 28,
+    lineHeight: 31,
     fontWeight: "bold",
     letterSpacing: 0.25,
-    color: "white",
+    color:"#a4e8f9",
     marginBottom:10,
             
   },
@@ -92,7 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 21,
     letterSpacing: 0.25,
-    color: "rgb(180, 150, 40)",
+    color: "rgb(180, 180, 40)",
     paddingBottom:40,
    
     
@@ -115,15 +125,7 @@ const styles = StyleSheet.create({
     
   },
 
-  divball: {
-    paddingTop: 60,
-    borderRadius: 9999,
-    backgroundColor: "rgba(10, 100, 100, 0.15)",
-    height: 260,
-    zIndex: -1,
-    
-    
-  },
+ 
 
   divText: {
     alignItems:"center",
