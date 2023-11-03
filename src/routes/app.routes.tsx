@@ -8,7 +8,7 @@ export default function Route() {
   const { Screen, Navigator } = createNativeStackNavigator();
   return (
     <>
-      <Navigator initialRouteName="home">
+      <Navigator initialRouteName="home" screenOptions={{headerShown:false}}>
         <Screen name="home" component={Button} />
         <Screen name="starsScreen" component={StarsScreen} />
         <Screen name="frase1" component={Frase1} />

@@ -1,10 +1,8 @@
-import React, { ReactNode, useContext } from "react";
-import { View, StyleSheet, TouchableOpacity, Image, Alert } from "react-native";
+import React, { useContext } from "react";
+import { View, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import { Entypo } from '@expo/vector-icons';
 import {useState} from 'react';
 import AppContext from "../context";
-
-
 
 interface Props{
   
@@ -18,32 +16,19 @@ export default function Stars({text}:Props) {
   return (
     <>
       <View style={styles.areaStar}>
-        <View style={styles.bg}>
-        <Image
-          source={require("../../../my-app/assets/background.png")}
-          style={{ flex: 1, position: "absolute" }}
-        />
-        </View>
-   
         <TouchableOpacity
           style={styles.actionButton}
           onPress={()=> {
             setStart((prev)=>!prev);
-            Alert.alert(!clicked ? text : "Hoje era isso que as estrelas tinham pra ti contar, amanhã tem mais!");
+            Alert.alert("", !clicked ? text : "Hoje era isso o que as estrelas tinham pra contar, amanhã tem mais!");
             setClicked(true);
           }
         }>
           <View style={styles.areaButton}>
-          <Entypo name="star-outlined" size={20} color="#a4e8f9" />
+            <Entypo name="star-outlined" size={20} color="#a4e8f9" />
           </View>
-          
         </TouchableOpacity>
       </View>
-
-     
-
-
-        
     </>
   );
 }

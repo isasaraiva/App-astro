@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image, Linking } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, Linking, Dimensions } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Entypo } from '@expo/vector-icons';
+
 
 
 export default function Button(props) {
+  const { width:screenX, height } = Dimensions.get('window')
+
   const { onPress, title = "Quero saber!" } = props;
   const { navigate } = useNavigation();
 
@@ -24,11 +26,14 @@ export default function Button(props) {
       <View style={styles.container}>
         <Image
           source={require("./background.png")}
-          style={{ flex: 1, position: "absolute", zIndex: -200 }}
+          style={{ flex: 1, width:screenX, position: "absolute", zIndex: -200 }}
         />
 
         <View style={styles.container0}>
-        <Entypo name="star-outlined" size={40} color="#a4e8f9" />
+        <Image
+        source={require('../../../assets/adaptive-icon.png')}
+        style={{ width:102, height:102}}
+        />
           <View style={styles.divText}>
             <Text style={styles.text}> Minha Estrela</Text>
           </View>
@@ -73,7 +78,8 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: "bold",
     letterSpacing: 0.25,
-    color: "white",
+    color: "rgb(153, 204, 255)",
+    zIndex:10,
     textAlign: "center",
   },
   button: {
@@ -86,7 +92,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     elevation: 3,
     backgroundColor: "#2C5367",
-    opacity: 0.7,
+    opacity: 1,
   },
   text: {
     fontSize: 28,
@@ -102,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 21,
     letterSpacing: 0.25,
-    color: "rgb(180, 180, 40)",
+    color: "rgb(153, 204, 255)",
     paddingBottom:40,
    
     
@@ -115,7 +121,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 21,
     letterSpacing: 0.7,
-    color: "rgba(150, 190, 220, 0.4)",
+    color: "rgba(153, 204, 255, 0.7)",
     
     
   },

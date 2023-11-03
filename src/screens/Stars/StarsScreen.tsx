@@ -1,31 +1,28 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, ImageBackground, Alert } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity} from "react-native";
 import { fraseAleatoria } from "../../utils/index";
 import { useState } from "react";
 import Star from "../../components/Star";
-import Star2 from "../../components/Star2"
-import Star3 from "../../components/Star3"
+import Star2 from "../../components/Star2";
+import Star3 from "../../components/Star3";
+
 interface Props {
   text: string;
 }
 export default function StarsScreen() {
+  const {width:screenX} = Dimensions.get('window')
   const [start, setStart] = useState(false);
-
+  
   return (
     <>
+    
       <View style={{backgroundColor: 'black'}}>
-        <ImageBackground
-          source={require('./background.png')}
-          resizeMode="cover"
-          // style={{ flex: 1, position: "absolute" }}
-        >
-          <Text style={styles.text2}>
-            Respire fundo
-          </Text>
-          <Text style={styles.text3}>
-            Escolha uma estrela e abra seu coração para o que ela
-            vai ter dizer
-          </Text>
+        <Image
+          source={require("./background.png")}
+          style={{ flex: 1, width:screenX, position: "absolute", zIndex: -200 }}
+        />
+       
+          
 
           <View style={styles.positionStar1}>
             <Star2 text={fraseAleatoria()} />
@@ -61,6 +58,13 @@ export default function StarsScreen() {
           <View style={styles.positionStar8}>
             <Star3 text={fraseAleatoria()}></Star3>
           </View>
+          <Text style={styles.text2}>
+            Respire fundo
+          </Text>
+          <Text style={styles.text3}>
+            Escolha uma estrela e abra seu coração para o que ela
+            vai ter dizer
+          </Text>
           <View style={styles.positionStar9}>
             <Star3 text={fraseAleatoria()}></Star3>
           </View>
@@ -85,8 +89,15 @@ export default function StarsScreen() {
           <View style={styles.positionStar16}>
             <Star3 text={fraseAleatoria()}></Star3>
           </View>
-
-        </ImageBackground>
+          <View style={styles.positionStar18}>
+            <Star3 text={fraseAleatoria()}></Star3>
+          </View>
+          <View style={styles.positionStar19}>
+            <Star3 text={fraseAleatoria()}></Star3>
+          </View>
+          <View style={styles.positionStar20}>
+            <Star3 text={fraseAleatoria()}></Star3>
+          </View>
       </View>
     </>
   );
@@ -124,7 +135,7 @@ const styles = StyleSheet.create({
   },
 
   text2: {
-    paddingTop:30,
+    paddingTop:40,
     paddingBottom:10,
     color: "rgb(10,150,180)",
     width: 250,
@@ -134,7 +145,7 @@ const styles = StyleSheet.create({
   },
   text3: {
    paddingBottom:20,
-    color: "rgb(10,150,180)",
+    color: "rgb(153, 204, 255)",
     width: 250,
     alignSelf: "center",
     fontSize: 14,
@@ -182,45 +193,45 @@ const styles = StyleSheet.create({
     height:20,
   },
   positionStar7: {
-    paddingLeft: 130,
+    paddingLeft: 160,
     width:20,
     paddingBottom:30,
     
   },
   positionStar8: {
     paddingLeft: 
-    80,
+    100,
     width:20,
   },
 
   positionStar9: {
-    paddingLeft: 250,
+    paddingLeft: 200,
     width:20,
     paddingBottom:30,
   },
 
   positionStar10: {
-    paddingLeft: 290,
+    paddingLeft: 280,
     width:20,
     paddingBottom: 30,
   },
   positionStar11: {
-    paddingLeft: 20,
+    paddingLeft: 50,
     width:20,
     paddingBottom: 20,
   },
   positionStar12: {
-    paddingLeft: 80,
+    paddingLeft: 160,
     width:20,
     paddingBottom: 20,
   },
   positionStar13: {
-    paddingLeft: 180,
+    paddingLeft: 190,
     width:20,
     paddingBottom: 30,
   },
   positionStar14: {
-    paddingLeft: 300,
+    paddingLeft: 340,
     width:20,
     paddingBottom: 30,
   },
@@ -230,7 +241,7 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   positionStar16: {
-    paddingLeft: 210,
+    paddingLeft: 240,
     width:20,
     paddingBottom: 30,
   },
@@ -239,5 +250,21 @@ const styles = StyleSheet.create({
     width:20,
     paddingBottom: 30,
   },
+  positionStar18: {
+    paddingLeft: 220,
+    width:20,
+    paddingBottom: 30,
+  },
+  positionStar19: {
+    paddingLeft: 360,
+    width:20,
+    paddingBottom: 30,
+  },
+  positionStar20: {
+    paddingLeft: 70,
+    width:20,
+    paddingBottom: 30,
+  },
+ 
   
 });
