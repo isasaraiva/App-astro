@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
   },
 
   positionStar1: {
+    marginTop:50,
     paddingBottom:30,
     paddingLeft: 150,
     height:30,

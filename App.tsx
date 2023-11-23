@@ -1,6 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import Header from "./src/screens/Home/Home";
+
+import { StyleSheet } from "react-native";
+
 import Routes from "./src/routes";
 import AppContext from "./src/context";
 import { useState } from "react";
