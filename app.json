@@ -15,14 +15,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.isasaraiva.minhaestrela"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000062"
       },
-      "package": "com.isasaraiva.minhaestrela"
+      "package": "com.isasaraiva.minhaestrela",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
